@@ -4,12 +4,12 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 (function () {
-    //11.6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~using classes to create objects~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //一个构造器 (constructor()), 构造器中参数(name) 的作用域是全局变量，Public 成员可以在任何地方访问， private 成员只允许在类中访问。  name：string卸载class person 与写在constructor是一样的，都是全局的；protected:受保护的。
     //任何对象都可以作为另一个对象的原型（prototype）；
     //定义类：需要专门的类定义符去定义类，在定义类时需要定义特殊的方法，称为构造器（constructor）；来创建类的实例，在构造方法中，可以指定实例的属性的初始值。
     //在TypeScript中接口interfaces的责任就是命名这些类型,函数类型的interface去描述我们的数据.
     //类static/instance区别:static(静态)部分和instance(实例)部分。
+    //11.6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~using classes to create objects~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     var Person = (function () {
         function Person(name, username) {
             this.username = username;
@@ -22,7 +22,6 @@ var __extends = (this && this.__extends) || function (d, b) {
         Person.prototype.setType = function (type) {
             this.type = type;
             console.log(this.type);
-            console.log("~~~~~~~~~~~~~~~~~");
         };
         return Person;
     }());
@@ -107,5 +106,20 @@ var __extends = (this && this.__extends) || function (d, b) {
     console.log(newProject);
     newProject.changeName("supper");
     console.log(newProject);
+    //private constructors 私有的构造器
+    var OnlyOne = (function () {
+        function OnlyOne(name) {
+            this.name = name;
+        }
+        OnlyOne.getInstance = function () {
+            if (!OnlyOne.instance) {
+                OnlyOne.instance = new OnlyOne('The Only One');
+            }
+            return OnlyOne.instance;
+        };
+        return OnlyOne;
+    }());
+    //let wrong = new OnlyOne('The Only One');
+    var right = OnlyOne.getInstance();
 })();
 //# sourceMappingURL=objectOriented.js.map

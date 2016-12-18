@@ -114,8 +114,4 @@
             return OnlyOne.instance;
         }
     }
-
-    //let wrong = new OnlyOne('The Only One');
-
-    let right = OnlyOne.getInstance();
 })();

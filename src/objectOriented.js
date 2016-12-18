@@ -119,7 +119,5 @@ var __extends = (this && this.__extends) || function (d, b) {
         };
         return OnlyOne;
     }());
-    //let wrong = new OnlyOne('The Only One');
-    var right = OnlyOne.getInstance();
 })();
 //# sourceMappingURL=objectOriented.js.map

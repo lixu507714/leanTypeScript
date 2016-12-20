@@ -228,13 +228,13 @@
     //         console.log(i);
     //     }, 100 * i);
     //}////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；
-    // for(var i=0;i<10;i++){
-    //     (function(i){
-    //         setTimeout(function() {
-    //             console.log(i);
-    //         }, 100 * i);
-    //     })(i);
-    // }
+    for (var i = 0; i < 10; i++) {
+        (function (i) {
+            setTimeout(function () {
+                console.log(i);
+            }, 100 * i);
+        })(i);
+    }
     function q(input) {
         var z = 100;
         if (input) {

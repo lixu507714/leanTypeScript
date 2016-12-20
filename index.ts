@@ -161,7 +161,7 @@
     };
     greet();
 
-    const greetFriend = friend =>console.log(friend);
+    const greetFriend = friend => console.log(friend);
     greetFriend("manu");
 
 //default paramters 参数
@@ -272,13 +272,14 @@ this is cool!`;
 //     }, 100 * i);
 //}////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；
 
-// for(var i=0;i<10;i++){
-//     (function(i){
-//         setTimeout(function() {
-//             console.log(i);
-//         }, 100 * i);
-//     })(i);
-// }
+    for (var i = 0; i < 10; i++) {
+        (function (i) {
+            setTimeout(function () {
+                console.log(i);
+            }, 100 * i);
+        })(i);
+    }
+
     function q(input: boolean) {
         let z = 100;
         if (input) {

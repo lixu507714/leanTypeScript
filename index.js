@@ -185,7 +185,6 @@
         Color[Color["Green"] = 1] = "Green";
         Color[Color["Blue"] = 2] = "Blue";
     })(Color || (Color = {}));
-    ;
     var c = Color.Green;
     var colorName = Color[2];
     console.log(colorName);
@@ -223,11 +222,14 @@
     //         console.log(i);
     //     }, 100 * i);
     //}//setTimeout 是在函数执行完之后才执行的。所以输出10次10；
-    // for(let i=0;i<10;i++){
-    //     setTimeout(function() {
-    //         console.log(i);
-    //     }, 100 * i);
-    //}////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；
+    var _loop_1 = function(i) {
+        setTimeout(function () {
+            console.log(i);
+        }, 100 * i);
+    };
+    for (var i = 0; i < 10; i++) {
+        _loop_1(i);
+    } ////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；
     for (var i = 0; i < 10; i++) {
         (function (i) {
             setTimeout(function () {

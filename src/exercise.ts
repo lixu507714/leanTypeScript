@@ -22,7 +22,8 @@
 
     const greet = (name = "Max") => {
         // if (name === undefined) { name = "Max"; }
-        console.log("Hello, " + name);
+        // console.log("Hello, " + name);
+        return name+'1234';
     };
     greet();
     greet("Anna");
@@ -41,4 +42,41 @@
     const scientist = {firstName: "Will", experience: 12};
     const {firstName, experience} = scientist;
     console.log(firstName, experience);
+
+// re-write all this code using typescript ang class features. 改写所有的代码使用typescript 和 class的特点
+    class Car {
+        usersname: string;
+        acceleration: number = 0;
+
+        constructor(usersname: string) {
+            this.usersname = usersname;
+        }
+
+        honk() {
+            console.log("Tooooo");
+        }
+
+        accelerate(speed: number) {
+            this.acceleration = this.acceleration + speed;
+        }
+    }
+    let car = new Car("bmw");
+    car.honk();
+    console.log(car.acceleration);
+    car.accelerate(10);
+    console.log(car.acceleration);
+
+    //exercise 2
+    class BaseObject {
+        width = 0;
+        height = 0;
+    }
+    //用到继承  rectangle 矩形
+    class Rectangle extends BaseObject {
+        calcSize() {
+            // return width * height;
+        }
+
+    }
+
 })();

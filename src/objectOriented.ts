@@ -49,6 +49,7 @@
     class Plant {
         private _species: string = "qw";
         // public species:string;
+
         get species() {
             return this._species;
         }
@@ -106,12 +107,46 @@
 //private constructors 私有的构造器
     class OnlyOne {
         private static instance: OnlyOne;
-        private constructor(public name: string) {}
+
+        private constructor(public name: string) {
+        }
+
         static getInstance() {
-            if(!OnlyOne.instance){
+            if (!OnlyOne.instance) {
                 OnlyOne.instance = new OnlyOne('The Only One');
             }
             return OnlyOne.instance;
         }
     }
+//readOnly properties(2.0) 只读的性能
+    //let wrong = new OnlyOne('The Only One');
+    let right = OnlyOne.getInstance();
+    console.log(right.name);
+
 })();
+
+class Person{
+    constructor(name: String, age: number) {
+        this._name = name;
+        this._age = age;
+    }
+    private _name:String;
+    private _age:number;
+
+
+    get name(): String {
+        return this._name;
+    }
+
+    set name(value: String) {
+        this._name = value;
+    }
+
+    get age(): number {
+        return this._age;
+    }
+
+    set age(value: number) {
+        this._age = value;
+    }
+}

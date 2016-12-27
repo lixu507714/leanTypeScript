@@ -67,12 +67,12 @@
     valuess = values;
     console.log(valuess());
 
+
 //objects
     let userData: {name: string,age: number} = {
         name: 'qz',
         age: 22
     };
-
 //complex object
     let complex: {data: number[],output: (all: boolean) => number[]} = {
         data: [1, 2, 3],
@@ -213,7 +213,6 @@ this is cool!`;
     console.log(x[3] = "world");
 //枚举  从0开始为元素编号。 你也可以手动的指定成员的数值
     enum Color {Red, Green, Blue}
-    ;
     let c: Color = Color.Green;
     let colorName: string = Color[2];
     console.log(colorName);
@@ -223,21 +222,21 @@ this is cool!`;
 //函数声明 ~~~~~~~~~~~~~~~~~~~~~~~~var let const~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     function asCont() {
-        var cont = 11;
+        let cont = 11;
         return function g() {
-            var b = cont + 1;
+            let b = cont + 1;
             return b;
         }
     }
 
-    var g = asCont();
+    let g = asCont();
     console.log(g());
 
     function f() {
-        var a = 1;
+        let a = 1;
 
         a = 2;
-        var b = g();
+        let b = g();
         a = 3;
 
         return b;
@@ -266,13 +265,13 @@ this is cool!`;
 //     }, 100 * i);
 //}//setTimeout 是在函数执行完之后才执行的。所以输出10次10；
 
-// for(let i=0;i<10;i++){
-//     setTimeout(function() {
-//         console.log(i);
-//     }, 100 * i);
-//}////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；
+for(let i=0;i<10;i++){
+    setTimeout(function() {
+        console.log(i);
+    }, 100 * i);
+}////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；
 
-    for (var i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         (function (i) {
             setTimeout(function () {
                 console.log(i);

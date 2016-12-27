@@ -119,5 +119,36 @@ var __extends = (this && this.__extends) || function (d, b) {
         };
         return OnlyOne;
     }());
+    //readOnly properties(2.0) 只读的性能
+    //let wrong = new OnlyOne('The Only One');
+    var right = OnlyOne.getInstance();
+    console.log(right.name);
 })();
+var Person = (function () {
+    function Person(name, age) {
+        this._name = name;
+        this._age = age;
+    }
+    Object.defineProperty(Person.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        set: function (value) {
+            this._name = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Person.prototype, "age", {
+        get: function () {
+            return this._age;
+        },
+        set: function (value) {
+            this._age = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Person;
+}());
 //# sourceMappingURL=objectOriented.js.map

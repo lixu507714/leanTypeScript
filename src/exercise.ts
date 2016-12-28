@@ -23,7 +23,7 @@
     const greet = (name = "Max") => {
         // if (name === undefined) { name = "Max"; }
         // console.log("Hello, " + name);
-        return name+'1234';
+        return name + '1234';
     };
     greet();
     greet("Anna");
@@ -68,15 +68,41 @@
 
     //exercise 2
     class BaseObject {
-        width = 0;
-        height = 0;
+        width: any = 0;
+        height: any = 0;
     }
     //用到继承  rectangle 矩形
     class Rectangle extends BaseObject {
         calcSize() {
-            // return width * height;
+            return this.width * this.height;
+        }
+    }
+    let rectangle = new Rectangle();
+    rectangle.width = 5;
+    rectangle.height = 10;
+    console.log(rectangle.calcSize());
+
+    //exercise 3
+    class Person {
+        private _firstName : string= "";
+
+        get firstName(): string {
+            return this._firstName;
         }
 
+        set firstName(value: string) {
+            if(value.length>3){
+                this._firstName = value;
+            }else{
+                this._firstName = "";
+            }
+        }
     }
+    let person = new Person();
+    console.log(person.firstName);
+    person.firstName = "MA";
+    console.log(person.firstName);
+    person.firstName = "MASERDA";
+    console.log(person.firstName);
 
 })();

@@ -73,9 +73,41 @@ var __extends = (this && this.__extends) || function (d, b) {
             _super.apply(this, arguments);
         }
         Rectangle.prototype.calcSize = function () {
-            // return width * height;
+            return this.width * this.height;
         };
         return Rectangle;
     }(BaseObject));
+    var rectangle = new Rectangle();
+    rectangle.width = 5;
+    rectangle.height = 10;
+    console.log(rectangle.calcSize());
+    //exercise 3
+    var Person = (function () {
+        function Person() {
+            this._firstName = "";
+        }
+        Object.defineProperty(Person.prototype, "firstName", {
+            get: function () {
+                return this._firstName;
+            },
+            set: function (value) {
+                if (value.length > 3) {
+                    this._firstName = value;
+                }
+                else {
+                    this._firstName = "";
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return Person;
+    }());
+    var person = new Person();
+    console.log(person.firstName);
+    person.firstName = "MA";
+    console.log(person.firstName);
+    person.firstName = "MASERDA";
+    console.log(person.firstName);
 })();
 //# sourceMappingURL=exercise.js.map

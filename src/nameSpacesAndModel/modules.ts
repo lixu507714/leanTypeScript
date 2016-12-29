@@ -6,3 +6,4 @@ import {rectangle} from "./math/rectangle";
 console.log(PI);
 console.log(circle(10));
 console.log(rectangle(2,3));
+

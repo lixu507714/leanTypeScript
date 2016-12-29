@@ -12,3 +12,4 @@ var MyMath;
         Circle.calcuateCircumference = calcuateCircumference;
     })(Circle = MyMath.Circle || (MyMath.Circle = {}));
 })(MyMath || (MyMath = {}));
+//# sourceMappingURL=circleMath.js.map

@@ -1,30 +1,6 @@
 /**
  * Created by lixu on 16/12/28.
  */
-var MyMath;
-(function (MyMath) {
-    var Circle;
-    (function (Circle) {
-        var PI = 3.14;
-        function calcuateCircumference(diameter) {
-            return PI * diameter;
-        }
-        Circle.calcuateCircumference = calcuateCircumference;
-    })(Circle = MyMath.Circle || (MyMath.Circle = {}));
-})(MyMath || (MyMath = {}));
-/**
- * Created by lixu on 16/12/28.
- */
-var MyMath;
-(function (MyMath) {
-    function calculateRectangle(height, width) {
-        return height * width;
-    }
-    MyMath.calculateRectangle = calculateRectangle;
-})(MyMath || (MyMath = {}));
-/**
- * Created by lixu on 16/12/28.
- */
 //~~~~~~~~~~~~~~~~nameSpaceAngModule~~~~~~~~~~~~~~~~~~~~~~
 //命名空间和模板 TS里的namespace是跨文件的，JS里的module是以文件为单位的，一个文件一个module
 //TS里的namespace主要是解决命名冲突的问题，会在全局生成一个对象，定义在namespace内部的类都要通过这个对象的属性访问  而JS里的module，主要是解决加载依赖关系的。跟文件绑定在一起，一个文件就是一个module
@@ -71,3 +47,5 @@ console.log(PI);
 //<reference path = "circleMath.ts" />
 //<reference path = "rectangleMath.ts" />
 //more on nameSpaces
+//limitations of namespaces 限制
+//# sourceMappingURL=NameSpacesAndModules.js.map

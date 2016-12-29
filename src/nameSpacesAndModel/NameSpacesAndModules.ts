@@ -56,5 +56,7 @@ console.log(PI);
 
 //more on nameSpaces
 
+//limitations of namespaces 限制
+
 
 

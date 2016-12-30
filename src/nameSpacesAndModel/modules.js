@@ -6,6 +6,8 @@
 // import {rectangle} from "./math/rectangle";
 var Circle = require("./math/circle");
 var rectangle_1 = require("./math/rectangle");
+//如果用angular2 写import
+// import {Component} from "@angular/core";
 console.log(Circle.PI);
 console.log(Circle.circle(10));
 console.log(rectangle_1.default(2, 3));

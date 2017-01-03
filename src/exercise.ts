@@ -84,16 +84,16 @@
 
     //exercise 3
     class Person {
-        private _firstName : string= "";
+        private _firstName: string = "";
 
         get firstName(): string {
             return this._firstName;
         }
 
         set firstName(value: string) {
-            if(value.length>3){
+            if (value.length > 3) {
                 this._firstName = value;
-            }else{
+            } else {
                 this._firstName = "";
             }
         }
@@ -104,5 +104,6 @@
     console.log(person.firstName);
     person.firstName = "MASERDA";
     console.log(person.firstName);
+
 
 })();

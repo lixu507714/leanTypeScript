@@ -26,13 +26,17 @@ class children {
 function logging(value: boolean) {
     return value ? logged : null;
 }
+@logging(true)
+class Car{
 
+}
 //advanced 先进的
 function printable(constructorFn:Function){
     constructorFn.prototype.print = function (){
         console.log(this);
     }
 }
+@logging(true)
 @printable
 class Plant {
     name = 'lixu'
@@ -40,4 +44,61 @@ class Plant {
 let plant = new Plant();
 (<any>plant).print();
 
+// method decorator    propertyDedcriptor :需查找
+function editable (value:boolean){
+    return function(target:any,propName:string,descriptor:propertyDescriptor){
+        descriptor.writable = value;
+    }
+}
+
+function overwrite(value:boolean){
+    return function(target:any,propName:string):any{
+        let newDescriptor:PropertyDescriptor = {
+            writable : value
+        };
+        return newDescriptor;
+    }
+}
+
+class Project {
+    @overwrite(false)
+    proiectName:string;
+    constructor (name:string){
+        this.proiectName = name;
+    }
+    @editable(false)
+    calcBudget(){
+        console.log(1000);
+    }
+}
+
+const project = new Project("gaoqz");
+project.calcBudget();
+project.calcBudget = function (){
+    console.log(2000);
+};
+project.calcBudget();
+
+//parameter 参数 decorator 装饰
+function printInfo(target:any,methodName:string,paramIndex:number){
+    console.log("target:",target);
+    console.log("methodName",methodName);
+    console.log("paramIndex",paramIndex);
+}
+class Course {
+    name:string;
+    constructor(name:string){
+        this.name = name;
+    }
+    printStudentNumbers(mode:string,@printInfo printAll:boolean){
+        if(printAll){
+            console.log(10000)
+        }else{
+            console.log(20000)
+        }
+    }
+}
+let course = new Course("lsh");
+course.printStudentNumbers("anything",true);
+course.printStudentNumbers("anything",false);
 

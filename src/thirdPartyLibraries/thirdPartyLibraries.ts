@@ -5,3 +5,6 @@
 import "jQuery";
 $("#pic").css({"background-color":"green"});
 //把JQuery编译成ts
+
+
+//managing 管理  udo npm install -g typings

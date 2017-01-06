@@ -9,5 +9,6 @@ System.register(["jQuery"], function(exports_1, context_1) {
         }
     }
 });
-//把JQuery编译成ts 
+//把JQuery编译成ts
+//managing 管理  udo npm install -g typings
 //# sourceMappingURL=thirdPartyLibraries.js.map

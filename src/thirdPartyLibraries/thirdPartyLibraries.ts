@@ -7,4 +7,7 @@ $("#pic").css({"background-color":"green"});
 //把JQuery编译成ts
 
 
-//managing 管理  udo npm install -g typings
+//managing 管理ts  udo npm install -g typings
+//更简单的管理 npm install --save-dev @types/jquery    "@types/jquery": "^2.0.39", 运行较快
+
+

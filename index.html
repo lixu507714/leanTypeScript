@@ -12,26 +12,28 @@
     <!--<script src="src/objectOriented.js"></script>-->
     <!--<script src="src/nameSpacesAndModel/NameSpacesAndModules.js"></script>-->
     <!--<script src="src/nameSpacesAndModel/modules.js"></script>-->
-    <script src="node_modules/systemjs/dist/system.js"></script>
+    <!--<script src="node_modules/systemjs/dist/system.js"></script>-->
     <!--<script src="src/interfaces/interface.js"></script>-->
     <!--<script src="src/generics/generics.js"></script>-->
     <!--<script src="src/decorator/decorator.js"></script>-->
     <!--<script src="node_modules/jquery/dist/jquery.js"></script>-->
     <!--<script src="node_modules/jquery/dist/jquery.min.js"></script>-->
     <!--<script src="src/thirdPartyLibraries/thirdPartyLibraries.js"></script>-->
+    <!--<script src="src/workflow/workflow.js"></script>-->
+    <script src="bundle.js"></script>
 </head>
 <body>
 <div id="pic">my name id lx!</div>
 <script>
-    //set our baseURL reference path
-    SystemJS.config({
-        map:{
-           "jQuery":"/node_modules/jquery/dist/jquery.min.js"
-        },
-        baseURL:'/src/thirdPartyLibraries',
-        defaultJSExtensions:true
-    });
-    SystemJS.import('thirdPartyLibraries.js');
+   // set our baseURL reference path
+//    SystemJS.config({
+//        map:{
+//           "jQuery":"/node_modules/jquery/dist/jquery.min.js"
+//        },
+//        baseURL:'/',
+//        defaultJSExtensions:true
+//    });
+//    SystemJS.import('app.js');
 </script>
 </body>
 </html>

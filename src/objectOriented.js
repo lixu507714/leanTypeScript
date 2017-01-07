@@ -34,8 +34,9 @@ var __extends = (this && this.__extends) || function (d, b) {
         __extends(Max, _super);
         //name = "Max";
         function Max(username) {
-            _super.call(this, "Max", username);
-            this.age = 23;
+            var _this = _super.call(this, "Max", username) || this;
+            _this.age = 23;
+            return _this;
         }
         return Max;
     }(Person));
@@ -76,9 +77,9 @@ var __extends = (this && this.__extends) || function (d, b) {
         Helpers.calcCircumference = function (diameter) {
             return this.PI * diameter;
         };
-        Helpers.PI = 3.14;
         return Helpers;
     }());
+    Helpers.PI = 3.14;
     console.log(2 * Helpers.PI);
     console.log(Helpers.calcCircumference(8));
     //abstract classes 抽象的类
@@ -95,7 +96,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     var ITProject = (function (_super) {
         __extends(ITProject, _super);
         function ITProject() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         ITProject.prototype.changeName = function (name) {
             this.projectName = name;

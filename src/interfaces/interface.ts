@@ -18,6 +18,14 @@
 // greet(person);
 // changeName(person);
 // greet(person);// ????????打印出来的值相同
+const a1:NamePerson = {
+    name:"dad",
+    age:12,
+    greet(namex:string){
+
+    }
+};
+
 interface NamePerson {
     name: string;
     age?: number;//可以选择
@@ -83,6 +91,19 @@ let oldPerson :AgedPerson = {
        console.log("hello");
     }
 };
-console.log(oldPerson);
+
+//--------------interface yu  class de qubie--------------------
+// let name1 :NamePerson = {
+//     age:13,
+//     name:"asa",
+//     greet(hello :string){
+//         console.log(hello);
+//     }
+// };
+// console.log(oldPerson);
+//
+// let name2 = new Persons();
+// const  name3 = new Persons();
+
 
 //interface get comliled 编译

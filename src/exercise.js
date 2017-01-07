@@ -70,7 +70,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     var Rectangle = (function (_super) {
         __extends(Rectangle, _super);
         function Rectangle() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Rectangle.prototype.calcSize = function () {
             return this.width * this.height;

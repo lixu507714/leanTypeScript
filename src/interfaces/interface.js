@@ -1,3 +1,29 @@
+/**
+ * Created by lixu on 16/12/30.
+ */
+// interface NamePerson {
+//     name:string;
+// }
+// function greet(person: NamePerson) {
+//     console.log("hello" + person.name);
+// }
+//
+// function changeName(person: NamePerson) {
+//     person.name = "anna";
+// }
+// const person = {
+//     name: "李旭",
+//     age: 24
+// };
+// greet(person);
+// changeName(person);
+// greet(person);// ????????打印出来的值相同
+var a1 = {
+    name: "dad",
+    age: 12,
+    greet: function (namex) {
+    }
+};
 function greet(person) {
     console.log("hello" + person.name);
 }
@@ -42,6 +68,17 @@ var oldPerson = {
         console.log("hello");
     }
 };
-console.log(oldPerson);
+//--------------interface yu  class de qubie--------------------
+// let name1 :NamePerson = {
+//     age:13,
+//     name:"asa",
+//     greet(hello :string){
+//         console.log(hello);
+//     }
+// };
+// console.log(oldPerson);
+//
+// let name2 = new Persons();
+// const  name3 = new Persons();
 //interface get comliled 编译 
 //# sourceMappingURL=interface.js.map

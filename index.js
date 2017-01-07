@@ -216,17 +216,17 @@
     }
     console.log(asConts());
     console.log('12345678900');
+    var _loop_1 = function (i) {
+        setTimeout(function () {
+            console.log(i);
+        }, 100 * i);
+    };
     //var 变量获取怪异之处
     // for (var i = 0; i < 10; i++) {
     //     setTimeout(function() {
     //         console.log(i);
     //     }, 100 * i);
     //}//setTimeout 是在函数执行完之后才执行的。所以输出10次10；
-    var _loop_1 = function(i) {
-        setTimeout(function () {
-            console.log(i);
-        }, 100 * i);
-    };
     for (var i = 0; i < 10; i++) {
         _loop_1(i);
     } ////用let声明 setTimeout 是在函数执行完之后才执行的。所以输出1-10；

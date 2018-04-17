@@ -28,7 +28,7 @@ const a1:NamePerson = {
 
 interface NamePerson {
     name: string;
-    age?: number;//可以选择
+    age?: number; // 可以选择
     [propName:string]:any;
     greet(lastName:string):void;
 }
@@ -40,7 +40,7 @@ function changeName(person: NamePerson) {
     person = person || {name: 'anna'};
     return person.name = "anna";
 }
-const person:NamePerson = {
+const person: NamePerson = {
     name: "李旭",
     age: 24,
     hobbies:["cooking","sport"],

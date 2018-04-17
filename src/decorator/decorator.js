@@ -23,11 +23,11 @@ var children = (function () {
     function children() {
         console.log("hi");
     }
+    children = __decorate([
+        logged
+    ], children);
     return children;
 }());
-children = __decorate([
-    logged
-], children);
 //装饰工厂 factory
 function logging(value) {
     return value ? logged : null;
@@ -35,11 +35,11 @@ function logging(value) {
 var Car = (function () {
     function Car() {
     }
+    Car = __decorate([
+        logging(true)
+    ], Car);
     return Car;
 }());
-Car = __decorate([
-    logging(true)
-], Car);
 //advanced 先进的
 function printable(constructorFn) {
     constructorFn.prototype.print = function () {
@@ -50,12 +50,12 @@ var Plant = (function () {
     function Plant() {
         this.name = 'lixu';
     }
+    Plant = __decorate([
+        logging(true),
+        printable
+    ], Plant);
     return Plant;
 }());
-Plant = __decorate([
-    logging(true),
-    printable
-], Plant);
 var plant = new Plant();
 plant.print();
 // method decorator    propertyDedcriptor :需查找
@@ -79,14 +79,14 @@ var Project = (function () {
     Project.prototype.calcBudget = function () {
         console.log(1000);
     };
+    __decorate([
+        overwrite(false)
+    ], Project.prototype, "proiectName", void 0);
+    __decorate([
+        editable(false)
+    ], Project.prototype, "calcBudget", null);
     return Project;
 }());
-__decorate([
-    overwrite(false)
-], Project.prototype, "proiectName", void 0);
-__decorate([
-    editable(false)
-], Project.prototype, "calcBudget", null);
 var project = new Project("gaoqz");
 project.calcBudget();
 project.calcBudget = function () {
@@ -111,11 +111,11 @@ var Course = (function () {
             console.log(20000);
         }
     };
+    __decorate([
+        __param(1, printInfo)
+    ], Course.prototype, "printStudentNumbers", null);
     return Course;
 }());
-__decorate([
-    __param(1, printInfo)
-], Course.prototype, "printStudentNumbers", null);
 var course = new Course("lsh");
 course.printStudentNumbers("anything", true);
 course.printStudentNumbers("anything", false);

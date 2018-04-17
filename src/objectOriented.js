@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 (function () {
     //一个构造器 (constructor()), 构造器中参数(name) 的作用域是全局变量，Public 成员可以在任何地方访问， private 成员只允许在类中访问。  name：string卸载class person 与写在constructor是一样的，都是全局的；protected:受保护的。
     //任何对象都可以作为另一个对象的原型（prototype）；
@@ -77,9 +82,9 @@ var __extends = (this && this.__extends) || function (d, b) {
         Helpers.calcCircumference = function (diameter) {
             return this.PI * diameter;
         };
+        Helpers.PI = 3.14;
         return Helpers;
     }());
-    Helpers.PI = 3.14;
     console.log(2 * Helpers.PI);
     console.log(Helpers.calcCircumference(8));
     //abstract classes 抽象的类
@@ -96,7 +101,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     var ITProject = (function (_super) {
         __extends(ITProject, _super);
         function ITProject() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ITProject.prototype.changeName = function (name) {
             this.projectName = name;

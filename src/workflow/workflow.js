@@ -1,8 +1,9 @@
+"use strict";
 /**
  * Created by lixu on 17/1/6.
  */
 //ts 的 workflow （工作流）
-"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //resolve决定 tsconfig.ison
 require("jQuery");
 $("#pic").css({ "background-color": "green" });
